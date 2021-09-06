@@ -1,0 +1,310 @@
+#################################################################
+# KEYBOARD BINDINGS FOR ANY TWM
+#################################################################
+
+#################################################################
+# SUPER + FUNCTION KEYS
+#################################################################
+
+# Atom
+super + F1
+	atom
+
+# Code
+super + F2
+	code
+
+#Inkscape
+super + F3
+    inkscape
+
+#Gimp
+super + F4
+    gimp
+
+#Meld
+super + F5
+    meld
+
+#GnuCash
+super + F6
+    gnucash
+
+#KeePassXC
+super + F7
+    keepassxc
+
+#Spotify
+super + F8
+    com.spotify.Client
+
+#Typora
+super + F9
+    typora
+
+#Firefox
+super + F10
+    firefox-developer-edition
+
+#Firefox
+super + shift + F10
+    firefox-developer-edition --private-window
+
+#Microsoft Edge
+super + F11
+    microsoft-edge-beta --profile-directory='Default'
+
+#Microsoft Edge
+super + shift + F11
+    microsoft-edge-beta --profile-directory='Profile 1'
+
+#Chrome Primary
+super + F12
+    google-chrome-stable --profile-directory='Default'
+
+#Chrome Secondary
+super + shift F12
+    google-chrome-stable --profile-directory='Profile 1'
+
+#################################################################
+# SUPER + ... KEYS
+#################################################################
+
+# Terminal
+super + Return
+    rofi-sensible-terminal
+
+# program launcher
+super + slash
+	rofi -modi drun -show drun -line-padding 4 \
+                -columns 2 -padding 20 -hide-scrollbar -terminal XTerm \
+                -show-icons -drun-icon-theme "Paper" -font "Droid Sans Regular 10"
+
+# program launcher
+super + backslash
+	rofi -modi run -show run -line-padding 4 \
+                -columns 2 -padding 20 -hide-scrollbar -terminal rofi-sensible-terminal \
+                -show-icons -run-icon-theme "Papirus" -font "Source Sans Pro Regular 11"
+
+# show open window
+super + ctrl + d
+	rofi -modi drun -show window -line-padding 4 \
+                -columns 2 -padding 20 -hide-scrollbar -terminal XTerm \
+                -show-icons -drun-icon-theme "Paper" -font "Droid Sans Regular 10"
+
+# show ssh sesssions
+super + shift + slash
+	rofi -modi drun -show ssh -line-padding 4 \
+                -columns 2 -padding 20 -hide-scrollbar -terminal XTerm \
+                -show-icons -drun-icon-theme "Paper" -font "Droid Sans Regular 10"
+
+# power-menu
+super + shift + e
+     ~/.config/rofi/powermenu.sh
+
+#arcolinux-logout
+super + x
+    arcolinux-logout
+
+#Rofi theme selector
+super + r
+    rofi-theme-selector
+
+#Urxvt
+#super + t
+#    urxvt
+
+#Pavucontrol
+super + v
+    pavucontrol
+
+#Pragha
+#super + m
+#    pragha
+
+#urxvt
+super + Return
+    urxvt
+
+#Xkill
+super + Escape
+    xkill
+
+
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+#File-Manager
+super + shift + Return
+	thunar
+
+#dmenu
+super + shift + d
+	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+
+#reload sxhkd:
+super + shift + s
+	pkill -USR1 -x sxhkd
+
+
+#################################################################
+# CONTROL + ALT KEYS
+#################################################################
+
+#arcolinux-welcome-app
+ctrl + alt + w
+     arcolinux-welcome-app
+
+#arcolinux-tweak-tool
+ctrl + alt + e
+    arcolinux-tweak-tool
+
+#conky-rotate
+ctrl + alt + Next
+     conky-rotate -n
+
+#conky-rotate
+ctrl + alt + Prior
+    conky-rotate -p
+
+#File-Manager
+ctrl + alt + b
+     thunar
+
+#Catfish
+ctrl + alt + c
+     catfish
+
+#Nitrogen
+ctrl + alt + i
+     nitrogen
+
+#arcolinux-logout
+ctrl + alt + k
+     arcolinux-logout
+
+#arcolinux-logout
+ctrl + alt + l
+    arcolinux-logout
+
+#Pamac-manager
+ctrl + alt + p
+    pamac-manager
+
+#Pulse Audio Control
+ctrl + alt + u
+     pavucontrol
+
+#Rofi theme selector
+ctrl + alt + r
+  rofi-theme-selector
+
+#Spotify
+ctrl + alt + s
+   spotify
+
+#st
+ctrl + alt + Return
+    st
+
+
+#################################################################
+# ALT + ... KEYS
+#################################################################
+
+
+
+
+#################################################################
+# CONTROL + SHIFT KEYS
+#################################################################
+
+
+
+#################################################################
+#     SCREENSHOTS
+#################################################################
+
+#Scrot
+Print
+    scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+
+#screeenshooter
+ctrl + Print
+     xfce4-screenshooter
+
+#Gnome-Screenshot
+ctrl + shift + Print
+     gnome-screenshot -i
+
+
+#################################################################
+#     FUNCTION KEYS
+#################################################################
+
+
+
+#################################################################
+#     MULTIMEDIA KEYS
+#################################################################
+
+#Raises volume
+XF86AudioRaiseVolume
+    amixer set Master 10%+
+
+#Lowers volume
+XF86AudioLowerVolume
+    amixer set Master 10%-
+
+#Mute
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
+
+#Playerctl works for Pragha, Spotify and others
+#Delete the line for playerctl if you want to use mpc
+#and replace it with the corresponding code
+#mpc works for e.g.ncmpcpp
+#mpc toggle
+#mpc next
+#mpc prev
+#mpc stop
+
+#PLAY
+XF86AudioPlay
+    playerctl play-pause
+
+#Next
+XF86AudioNext
+    playerctl next
+
+#previous
+XF86AudioPrev
+    playerctl previous
+
+#Stop
+XF86AudioStop
+    playerctl stop
+
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+
+#################################################################
+#################################################################
+##################   DESKTOP SPECIFIC    ########################
+#################################################################
+#################################################################
+
+#################################################################
+# CTRL + ALT KEYS
+#################################################################
+
+#Picom Toggle
+ctrl + alt + o
+    ~/.config/arco-dwm/scripts/picom-toggle.sh
