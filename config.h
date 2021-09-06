@@ -29,6 +29,7 @@ static const Rule rules[] = {
 	/* class      	instance    title       tags mask     switchtotag	isfloating   monitor */
 	{ "Gimp",     	NULL,       NULL,       0,            0,		1,           -1 },
 	{ "Firefox",  	NULL,       NULL,       1 << 5,       1,		0,           -1 },
+	{ "KeePassXC", 	NULL,       NULL,       1 << 7,       1,		0,           -1 },
 	{ "Code",  	NULL,       NULL,       1 << 1,       1,		0,           -1 },
 };
 
