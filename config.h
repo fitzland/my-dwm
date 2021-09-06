@@ -73,6 +73,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "rofi-sensible-terminal", NULL };
 
+#include "shiftview.c"
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -98,6 +100,16 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ Mod1Mask|ControlMask,         XK_Right,  shiftview,      {.i =  1 } },
+	{ Mod1Mask|ControlMask,         XK_Left,   shiftview,      {.i = -1 } },
+	{ Mod1Mask|ControlMask,         XK_Up,     shiftview,      {.i =  1 } },
+	{ Mod1Mask|ControlMask,         XK_Down,   shiftview,      {.i = -1 } },
+	{ Mod1Mask,						XK_Tab,    shiftview,      {.i =  1 } },
+	{ Mod1Mask|ShiftMask,	        XK_Tab,	   shiftview,	   {.i = -1 } },
+	{ MODKEY,		        		XK_Tab,    shiftview,	   {.i =  1 } },
+	{ MODKEY|ShiftMask,		        XK_Tab,	   shiftview,	   {.i = -1 } },
+
+
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
