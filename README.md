@@ -1,2 +1,2 @@
 # dwm
-my version of the dynamic window manager
+my slightly patched version of the dynamic window manager
