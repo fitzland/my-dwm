@@ -19,18 +19,27 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1|home", "2|edit", "3|ofc", "4|grfx", "5|misc", "6|web", "7|file", "8|util", "9|media" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      	instance    title       tags mask     switchtotag	isfloating   monitor */
-	{ "Gimp",     	NULL,       NULL,       0,            0,		1,           -1 },
-	{ "Firefox",  	NULL,       NULL,       1 << 5,       1,		0,           -1 },
-	{ "KeePassXC", 	NULL,       NULL,       1 << 7,       1,		0,           -1 },
-	{ "Code",  	NULL,       NULL,       1 << 1,       1,		0,           -1 },
+	/* class      			instance    title       tags mask     switchtotag	isfloating   monitor */
+	{ "Code",  			NULL,       NULL,       1 << 1,       1,		0,           -1 },
+	{ "Gnucash",  			NULL,       NULL,       1 << 2,       1,		0,           -1 },
+	{ "Soffice",  			NULL,       NULL,       1 << 2,       1,		0,           -1 },
+	{ "Inkscape",  			NULL,       NULL,       1 << 3,       1,		0,           -1 },
+	{ "Gimp-2.10", 			NULL,       NULL,       1 << 3,       1,		0,           -1 },
+	{ "Meld",  			NULL,       NULL,       1 << 4,       1,		0,           -1 },
+	{ "Code",  			NULL,       NULL,       1 << 1,       1,		0,           -1 },
+	{ "Google-chrome",		NULL,       NULL,       1 << 5,       1,		0,           -1 },
+	{ "Microsoft-edge-beta",	NULL,       NULL,       1 << 5,       1,		0,           -1 },
+	{ "Navigator", 			NULL,       NULL,       1 << 5,       1,		0,           -1 },
+	{ "firefoxdeveloperedition",  	NULL,       NULL,       1 << 5,       1,		0,           -1 },
+	{ "Thunar", 			NULL,       NULL,       1 << 6,       1,		0,           -1 },
+	{ "KeePassXC", 			NULL,       NULL,       1 << 7,       1,		0,           -1 },
 };
 
 /* layout(s) */
@@ -47,7 +56,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -60,12 +69,12 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "rofi-sensible-terminal", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -73,7 +82,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_u,	   zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
