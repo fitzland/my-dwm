@@ -27,13 +27,14 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      			instance    title       tags mask     switchtotag	isfloating   monitor */
+	{ "Atom",  			NULL,       NULL,       1 << 1,       1,		0,           -1 },
 	{ "Code",  			NULL,       NULL,       1 << 1,       1,		0,           -1 },
 	{ "Gnucash",  			NULL,       NULL,       1 << 2,       1,		0,           -1 },
 	{ "Soffice",  			NULL,       NULL,       1 << 2,       1,		0,           -1 },
 	{ "Inkscape",  			NULL,       NULL,       1 << 3,       1,		0,           -1 },
 	{ "Gimp-2.10", 			NULL,       NULL,       1 << 3,       1,		0,           -1 },
 	{ "Meld",  			NULL,       NULL,       1 << 4,       1,		0,           -1 },
-	{ "masterpdfeditor5",		NULL,       NULL,       1 << 4,       1,		0,           -1 },
+	{ "Master PDF Editor 5",	NULL,       NULL,       1 << 4,       1,		0,           -1 },
 	{ "Google-chrome",		NULL,       NULL,       1 << 5,       1,		0,           -1 },
 	{ "Microsoft-edge-beta",	NULL,       NULL,       1 << 5,       1,		0,           -1 },
 	{ "Navigator", 			NULL,       NULL,       1 << 5,       1,		0,           -1 },

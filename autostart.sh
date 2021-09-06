@@ -8,7 +8,8 @@ function run {
 }
 run "dex $HOME/.config/autostart/arcolinux-welcome-app.desktop"
 #run xrandr --output HDMI2 --right-of HDMI1 --auto
-run xrandr --output DP-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-4 --mode 1920x1080 --pos 0x0 --rotate normal
+#run xrandr --output DP-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-4 --mode 1920x1080 --pos 0x0 --rotate normal
+sh ~/.screenlayout/monitor.sh &
 #autorandr horizontal
 
 run "nm-applet"
