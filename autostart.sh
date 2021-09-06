@@ -7,7 +7,6 @@ function run {
   fi
 }
 run "dex $HOME/.config/autostart/arcolinux-welcome-app.desktop"
-#run xrandr --output HDMI2 --right-of HDMI1 --auto
 #run xrandr --output DP-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-4 --mode 1920x1080 --pos 0x0 --rotate normal
 sh ~/.screenlayout/monitor.sh &
 #autorandr horizontal
@@ -19,7 +18,7 @@ run "pamac-tray"
 run "blueberry-tray"
 #run "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-picom -b  --config ~/.config/dwm/picom.conf &
+picom -b --config ~/.config/dwm/picom.conf &
 run "numlockx on"
 setxkbmap -option compose:rctrl &
 run "volumeicon"
