@@ -25,9 +25,10 @@ run "volumeicon"
 run slstatus &
 sxhkd -c ~/.config/dwm/sxhkd/sxhkdrc &
 #run "nitrogen --restore"
-run "conky -c $HOME/.config/dwm/system-overview"
+#run "conky -c $HOME/.config/dwm/system-overview"
 #you can set wallpapers in themes as well
-feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+#feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+feh --bg-fill /usr/share/backgrounds/wide-cubic-3840x1080.jpg &
 
 #run applications from startup
 
