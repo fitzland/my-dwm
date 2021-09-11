@@ -78,25 +78,25 @@ super + Return
 super + slash
 	rofi -modi drun -show drun -line-padding 4 \
                 -columns 2 -padding 20 -hide-scrollbar -terminal XTerm \
-                -show-icons -drun-icon-theme "Paper" -font "Droid Sans Regular 10"
+                -show-icons -drun-icon-theme "Papirus" -font "Droid Sans Regular 11"
 
 # program launcher
 super + backslash
 	rofi -modi run -show run -line-padding 4 \
                 -columns 2 -padding 20 -hide-scrollbar -terminal rofi-sensible-terminal \
-                -show-icons -run-icon-theme "Papirus" -font "Source Sans Pro Regular 11"
+                -show-icons -run-icon-theme "Papirus" -font "Droid Sans Regular 11"
 
 # show open window
 super + ctrl + d
 	rofi -modi drun -show window -line-padding 4 \
                 -columns 2 -padding 20 -hide-scrollbar -terminal XTerm \
-                -show-icons -drun-icon-theme "Paper" -font "Droid Sans Regular 10"
+                -show-icons -drun-icon-theme "Papirus" -font "Droid Sans Regular 10"
 
 # show ssh sesssions
 super + shift + slash
 	rofi -modi drun -show ssh -line-padding 4 \
                 -columns 2 -padding 20 -hide-scrollbar -terminal XTerm \
-                -show-icons -drun-icon-theme "Paper" -font "Droid Sans Regular 10"
+                -show-icons -drun-icon-theme "Papirus" -font "Droid Sans Regular 10"
 
 # power-menu
 super + shift + e
