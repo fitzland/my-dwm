@@ -10,8 +10,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "Iosevka:size=10" };
+static const char dmenufont[]       = "Iosevka:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -31,22 +31,22 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      			instance    title       tags mask     switchtotag	isfloating   monitor */
+	/* class      				instance    title       tags mask     switchtotag	isfloating   monitor */
 	{ "Atom",  					NULL,       NULL,       1 << 1,       1,		0,           -1 },
 	{ "Code",  					NULL,       NULL,       1 << 1,       1,		0,           -1 },
-	{ "Gnucash",  			NULL,       NULL,       1 << 2,       1,		0,           -1 },
-	{ "Soffice",  			NULL,       NULL,       1 << 2,       1,		0,           -1 },
-	{ "Inkscape",  			NULL,       NULL,       1 << 3,       1,		0,           -1 },
-	{ "Gimp-2.10", 			NULL,       NULL,       1 << 3,       1,		0,           -1 },
+	{ "Gnucash",  				NULL,       NULL,       1 << 2,       1,		0,           -1 },
+	{ "Soffice",  				NULL,       NULL,       1 << 2,       1,		0,           -1 },
+	{ "Inkscape",  				NULL,       NULL,       1 << 3,       1,		0,           -1 },
+	{ "Gimp-2.10", 				NULL,       NULL,       1 << 3,       1,		0,           -1 },
 	{ "Meld",  					NULL,       NULL,       1 << 4,       1,		0,           -1 },
 	{ "Master PDF Editor 5",	NULL,       NULL,       1 << 4,       1,		0,           -1 },
-	{ "Google-chrome",	NULL,       NULL,       1 << 5,       1,		0,           -1 },
+	{ "Google-chrome",			NULL,       NULL,       1 << 5,       1,		0,           -1 },
 	{ "Microsoft-edge-beta",	NULL,       NULL,       1 << 5,       1,		0,           -1 },
-	{ "Navigator", 			NULL,       NULL,       1 << 5,       1,		0,           -1 },
-	{ "firefoxdeveloperedition",  	NULL,       NULL,       1 << 5,       1,		0,           -1 },
+	{ "Navigator", 				NULL,       NULL,       1 << 5,       1,		0,           -1 },
+	{ "firefoxdeveloperedition",NULL,       NULL,       1 << 5,       1,		0,           -1 },
 	{ "Thunar", 				NULL,       NULL,       1 << 6,       1,		0,           -1 },
-	{ "KeePassXC", 			NULL,       NULL,       1 << 7,       1,		0,           -1 },
-	{ "Pamac-manager",	NULL,       NULL,       1 << 7,       1,		0,           -1 },
+	{ "KeePassXC", 				NULL,       NULL,       1 << 7,       1,		0,           -1 },
+	{ "Pamac-manager",			NULL,       NULL,       1 << 7,       1,		0,           -1 },
 };
 
 /* layout(s) */
@@ -76,14 +76,14 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "rofi-sensible-terminal", NULL };
 
 #include "shiftview.c"
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,	                	XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

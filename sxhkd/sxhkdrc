@@ -77,26 +77,26 @@ super + Return
 # program launcher
 super + slash
 	rofi -modi drun -show drun -line-padding 4 \
-                -columns 2 -padding 20 -hide-scrollbar -terminal XTerm \
-                -show-icons -drun-icon-theme "Papirus" -font "Droid Sans Regular 11"
+				-columns 2 -padding 20 -hide-scrollbar -terminal rofi-sensible-terminal \
+                -show-icons -drun-icon-theme "Papirus" -font "Iosevka Regular 11"
 
 # program launcher
 super + backslash
 	rofi -modi run -show run -line-padding 4 \
                 -columns 2 -padding 20 -hide-scrollbar -terminal rofi-sensible-terminal \
-                -show-icons -run-icon-theme "Papirus" -font "Droid Sans Regular 11"
+                -show-icons -run-icon-theme "Papirus" -font "Iosevka Regular 11"
 
 # show open window
 super + ctrl + d
 	rofi -modi drun -show window -line-padding 4 \
-                -columns 2 -padding 20 -hide-scrollbar -terminal XTerm \
-                -show-icons -drun-icon-theme "Papirus" -font "Droid Sans Regular 10"
+                -columns 2 -padding 20 -hide-scrollbar -terminal rofi-sensible-terminal \
+                -show-icons -drun-icon-theme "Papirus" -font "Iosevka Regular 10"
 
 # show ssh sesssions
 super + shift + slash
 	rofi -modi drun -show ssh -line-padding 4 \
                 -columns 2 -padding 20 -hide-scrollbar -terminal XTerm \
-                -show-icons -drun-icon-theme "Papirus" -font "Droid Sans Regular 10"
+                -show-icons -drun-icon-theme "Papirus" -font "Iosevka Regular 10"
 
 # power-menu
 super + shift + e
@@ -110,21 +110,9 @@ super + x
 super + r
     rofi-theme-selector
 
-#Urxvt
-#super + t
-#    urxvt
-
 #Pavucontrol
 super + v
     pavucontrol
-
-#Pragha
-#super + m
-#    pragha
-
-#urxvt
-super + Return
-    urxvt
 
 #Xkill
 super + Escape
@@ -138,10 +126,6 @@ super + Escape
 #File-Manager
 super + shift + Return
 	thunar
-
-#dmenu
-super + shift + d
-	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 #reload sxhkd:
 super + shift + s
