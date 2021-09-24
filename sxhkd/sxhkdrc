@@ -1,18 +1,22 @@
 #################################################################
-# KEYBOARD BINDINGS FOR ANY TWM
+# KEYBOARD BINDINGS FOR DWM
 #################################################################
 
 #################################################################
 # SUPER + FUNCTION KEYS
 #################################################################
 
-# Atom
+# keybindings
 super + F1
-	atom
+	~/.config/bspwm/scripts/keybindings_rofi.sh
 
 # Code
 super + F2
 	code
+
+# Atom
+super + shift + F2
+	atom
 
 #Inkscape
 super + F3
@@ -67,10 +71,10 @@ super + shift F12
     google-chrome-stable --profile-directory='Profile 1'
 
 #################################################################
-# SUPER + ... KEYS
+# SUPER + KEYS
 #################################################################
 
-# Terminal
+# terminal emulator
 super + Return
     rofi-sensible-terminal
 
