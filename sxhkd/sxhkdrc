@@ -150,7 +150,7 @@ ctrl + alt + e
 
 #conky-rotate
 ctrl + alt + Next
-     conky-rotate -n
+    conky-rotate -n
 
 #conky-rotate
 ctrl + alt + Prior
@@ -158,19 +158,19 @@ ctrl + alt + Prior
 
 #File-Manager
 ctrl + alt + b
-     thunar
+    thunar
 
 #Catfish
 ctrl + alt + c
-     catfish
+    catfish
 
 #Nitrogen
 ctrl + alt + i
-     nitrogen
+    nitrogen
 
 #arcolinux-logout
 ctrl + alt + k
-     arcolinux-logout
+    arcolinux-logout
 
 #arcolinux-logout
 ctrl + alt + l

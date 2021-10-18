@@ -31,6 +31,7 @@ sxhkd -c ~/.config/dwm/sxhkd/sxhkdrc &
 #feh --bg-scale --no-xinerama /usr/share/backgrounds/wide-cubic-3840x1080.jpg &
 feh --bg-scale --no-xinerama /usr/share/backgrounds/wide-adapta-nokto.png &
 
+wmname LG3D
 #run applications from startup
 
 #run "insync start"
