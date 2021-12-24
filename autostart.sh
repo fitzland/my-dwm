@@ -17,7 +17,7 @@ run "pamac-tray"
 #run "xfce4-power-manager"
 run "blueberry-tray"
 #run "/usr/lib/xfce4/notifyd/xfce4-notifyd"
-run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+run "/usr/bin/lxpolkit"
 picom -b --config ~/.config/dwm/picom.conf &
 run "numlockx on"
 setxkbmap -option compose:rctrl &

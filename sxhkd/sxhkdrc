@@ -2,99 +2,69 @@
 # KEYBOARD BINDINGS FOR DWM
 #################################################################
 
-#################################################################
-# SUPER + FUNCTION KEYS
-#################################################################
+##---------- Keybindings for apps ----------##
 
-# keybindings
+# Search
 super + F1
-	~/.config/bspwm/scripts/keybindings_rofi.sh
+	catfish
 
-# Code
-super + F2
-	code
+# Editor
+super + {_,shift} + F2
+	{code,atom}
 
-# Atom
-super + shift + F2
-	atom
-
-#Inkscape
+# Inkscape
 super + F3
     inkscape
 
-#Gimp
+# Gimp
 super + F4
     gimp
 
-#Meld
+# Meld
 super + F5
     meld
 
-#GnuCash
+# GnuCash
 super + F6
     gnucash
 
-#KeePassXC
-super + F7
-    keepassxc
+# KeePassXC
+super + {_,shift} + F7
+    keepassxc {$HOME/Dropbox/journal/home.kdbx,keepassxc $HOME/Dropbox/journal/work.kdbx}
 
-#Spotify
-super + F8
-    com.spotify.Client
+# File Manager
+super + {_,shift} + F8
+    {thunar,alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e ranger}
 
-#Typora
-super + F9
-    typora
+# Markdown Editor
+super + {_,shift} + F9
+    {ghostwriter,typora}
 
-#Firefox
-super + F10
-    firefox-developer-edition
-
-#Firefox
-super + shift + F10
-    firefox-developer-edition --private-window
+# Firefox
+super + {_,shift} + F10
+    {firefox-developer-edition,firefox-developer-edition --private-window}
 
 #Microsoft Edge
-super + F11
-    microsoft-edge-beta --profile-directory='Default'
-
-#Microsoft Edge
-super + shift + F11
-    microsoft-edge-beta --profile-directory='Profile 1'
+super + {_,shift} + F11
+    {microsoft-edge-stable --profile-directory='Default',microsoft-edge-stable --profile-directory='Profile 1'}
 
 #Chrome Primary
-super + F12
-    google-chrome-stable --profile-directory='Default'
+super + {_,shift} + F12
+    {google-chrome-stable --profile-directory='Default',google-chrome-stable --profile-directory='Profile 1'}
 
-#Chrome Secondary
-super + shift F12
-    google-chrome-stable --profile-directory='Profile 1'
+##---------- Rofi Launcher & Menus ----------##
 
-#################################################################
-# SUPER + KEYS
-#################################################################
-
-# terminal emulator
-super + Return
-    rofi-sensible-terminal
-
-# program launcher
+# Rofi App Launcher
 super + slash
-	rofi -modi drun -show drun -line-padding 4 \
-				-columns 2 -padding 20 -hide-scrollbar -terminal rofi-sensible-terminal \
-                -show-icons -drun-icon-theme "Papirus" -font "Iosevka Regular 11"
+	sh ~/.config/dwm/rofi/bin/launcher-app
 
-# program launcher
-super + backslash
-	rofi -modi run -show run -line-padding 4 \
-                -columns 2 -padding 20 -hide-scrollbar -terminal rofi-sensible-terminal \
-                -show-icons -run-icon-theme "Papirus" -font "Iosevka Regular 11"
+# Rofi Term Launcher
+super + {_,shift} + backslash
+	sh ~/.config/dwm/rofi/bin/{launcher-cmd,windows}
 
-# show open window
-super + ctrl + d
-	rofi -modi drun -show window -line-padding 4 \
-                -columns 2 -padding 20 -hide-scrollbar -terminal rofi-sensible-terminal \
-                -show-icons -drun-icon-theme "Papirus" -font "Iosevka Regular 10"
+#dmenu
+super + p
+	dmenu_run -b -m 1 -p dmenu: -nb '#282a36' -nf '#f8f8f2' -sb '#6272a4' -sf '#f8f8f2'
 
 # show ssh sesssions
 super + shift + slash
@@ -104,11 +74,11 @@ super + shift + slash
 
 # power-menu
 super + shift + e
-     ~/.config/rofi/powermenu.sh
+    /usr/share/archcraft/dwm/rofi/bin/powermenu
 
-#arcolinux-logout
-super + x
-    arcolinux-logout
+# Rofi Menus/Applets
+super + {m,x,r,s,i}
+	sh ~/.config/dwm/rofi/bin/{mpd,powermenu,asroot,screenshot,network}
 
 #Rofi theme selector
 super + r
@@ -122,6 +92,9 @@ super + v
 super + Escape
     xkill
 
+# Terminal Apps
+ctrl + alt + {v,r,h}
+	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e {vim,ranger,htop}
 
 #################################################################
 # SUPER + SHIFT KEYS
@@ -140,14 +113,6 @@ super + shift + s
 # CONTROL + ALT KEYS
 #################################################################
 
-#arcolinux-welcome-app
-ctrl + alt + w
-     arcolinux-welcome-app
-
-#arcolinux-tweak-tool
-ctrl + alt + e
-    arcolinux-tweak-tool
-
 #conky-rotate
 ctrl + alt + Next
     conky-rotate -n
@@ -155,10 +120,6 @@ ctrl + alt + Next
 #conky-rotate
 ctrl + alt + Prior
     conky-rotate -p
-
-#File-Manager
-ctrl + alt + b
-    thunar
 
 #Catfish
 ctrl + alt + c
@@ -168,40 +129,46 @@ ctrl + alt + c
 ctrl + alt + i
     nitrogen
 
-#arcolinux-logout
+#lock dwm
 ctrl + alt + k
-    arcolinux-logout
+	sh $HOME/$USER/.config/dwm/bin/i3lock-fancy/i3lock-fancy.sh
+	#betterlockscreen -l dim -- --time-str="%H:%M"
 
-#arcolinux-logout
-ctrl + alt + l
-    arcolinux-logout
+#logout dwm
+ctrl + alt + Delete
+    dwmc quit
 
-#Pamac-manager
-ctrl + alt + p
-    pamac-manager
+# Take a screenshot
+Print
+	takeshot --now
 
-#Pulse Audio Control
-ctrl + alt + u
-     pavucontrol
+# Take screenshot in 5 second
+alt + Print
+	takeshot --in5
 
-#Rofi theme selector
-ctrl + alt + r
-  rofi-theme-selector
+# Take screenshot in 10 second
+shift + Print
+	takeshot --in10
 
-#Spotify
-ctrl + alt + s
-   spotify
+# Take screenshot of active window
+ctrl + Print
+	takeshot --win
 
-#st
-ctrl + alt + Return
-    st
-
-
-#################################################################
-# ALT + ... KEYS
-#################################################################
+# Take screenshot of area
+ctrl + alt + Print
+	takeshot --area
 
 
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume}
+	volume{ --inc, --dec}
+
+XF86AudioMute
+	volume --toggle
+
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
 
 
 #################################################################
