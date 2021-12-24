@@ -32,8 +32,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      				instance    title       tags mask     switchtotag	isfloating   monitor */
-	{ "Atom",  					NULL,       NULL,       1 << 1,       1,			0,           -1 },
-	{ "Code",  					NULL,       NULL,       1 << 1,       1,			0,           -1 },
+	{ "Atom",  					NULL,       NULL,       1 << 1,       1,			0,           0 },
+	{ "Code",  					NULL,       NULL,       1 << 1,       1,			0,           0 },
 	{ "Gnucash",  				NULL,       NULL,       1 << 2,       1,			0,           -1 },
 	{ "Soffice",  				NULL,       NULL,       1 << 2,       1,			0,           -1 },
 	{ "Inkscape",  				NULL,       NULL,       1 << 3,       1,			0,           1 },
@@ -96,7 +96,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -107,8 +107,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ Mod1Mask|ControlMask,         XK_Right,  shiftview,      {.i =  1 } },
 	{ Mod1Mask|ControlMask,         XK_Left,   shiftview,      {.i = -1 } },
-	{ Mod1Mask|ControlMask,         XK_Up,     shiftview,      {.i =  1 } },
-	{ Mod1Mask|ControlMask,         XK_Down,   shiftview,      {.i = -1 } },
+	{ MODKEY|Mod1Mask,		        XK_Right,  shiftview,      {.i =  1 } },
+	{ MODKEY|Mod1Mask,		        XK_Left,   shiftview,      {.i = -1 } },
 	{ Mod1Mask,						XK_Tab,    shiftview,      {.i =  1 } },
 	{ Mod1Mask|ShiftMask,	        XK_Tab,	   shiftview,	   {.i = -1 } },
 	{ MODKEY,		        		XK_Tab,    shiftview,	   {.i =  1 } },
