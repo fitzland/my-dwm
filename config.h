@@ -111,8 +111,6 @@ static Key keys[] = {
 	{ MODKEY|Mod1Mask,		        XK_Left,   shiftview,      {.i = -1 } },
 	{ Mod1Mask,						XK_Tab,    shiftview,      {.i =  1 } },
 	{ Mod1Mask|ShiftMask,	        XK_Tab,	   shiftview,	   {.i = -1 } },
-	{ MODKEY,		        		XK_Tab,    shiftview,	   {.i =  1 } },
-	{ MODKEY|ShiftMask,		        XK_Tab,	   shiftview,	   {.i = -1 } },
 
 
 	TAGKEYS(                        XK_1,                      0)
