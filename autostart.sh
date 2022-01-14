@@ -29,7 +29,7 @@ sxhkd -c ~/.config/dwm/sxhkd/sxhkdrc &
 #you can set wallpapers in themes as well
 #feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #feh --bg-scale --no-xinerama /usr/share/backgrounds/wide-cubic-3840x1080.jpg &
-feh --bg-scale --no-xinerama /usr/share/backgrounds/wide-adapta-nokto.png &
+feh --bg-scale --no-xinerama /usr/share/backgrounds/dwm.png &
 
 wmname LG3D
 #run applications from startup
